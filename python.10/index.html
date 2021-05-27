@@ -1,0 +1,3108 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+        <meta name="description" content="越努力越幸运">
+      
+      
+        <link rel="canonical" href="https://github.com/WangRongsheng/python.10/">
+      
+      
+        <meta name="author" content="王荣胜">
+      
+      
+        <meta name="lang:clipboard.copy" content="复制">
+      
+        <meta name="lang:clipboard.copied" content="已复制">
+      
+        <meta name="lang:search.language" content="zh">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="没有找到符合条件的结果">
+      
+        <meta name="lang:search.result.one" content="找到 1 个符合条件的结果">
+      
+        <meta name="lang:search.result.other" content="# 个符合条件的结果">
+      
+        <meta name="lang:search.tokenizer" content="[\uff0c\u3002]+">
+      
+      <link rel="shortcut icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.0.6">
+    
+    
+      
+        <title>第10章 Python 标准库 - 教书的先生</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/application.451f80e5.css">
+      
+        <link rel="stylesheet" href="../assets/stylesheets/application-palette.22915126.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#3f51b5">
+      
+    
+    
+      <script src="../assets/javascripts/modernizr.1aa3b519.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../assets/fonts/material-icons.css">
+    
+    
+  </head>
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448"
+    viewBox="0 0 416 448" id="__github">
+  <path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19-18.125
+        8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19 18.125-8.5
+        18.125 8.5 10.75 19 3.125 20.5zM320 304q0 10-3.125 20.5t-10.75
+        19-18.125 8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19
+        18.125-8.5 18.125 8.5 10.75 19 3.125 20.5zM360
+        304q0-30-17.25-51t-46.75-21q-10.25 0-48.75 5.25-17.75 2.75-39.25
+        2.75t-39.25-2.75q-38-5.25-48.75-5.25-29.5 0-46.75 21t-17.25 51q0 22 8
+        38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0
+        37.25-1.75t35-7.375 30.5-15 20.25-25.75 8-38.375zM416 260q0 51.75-15.25
+        82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5-41.75
+        1.125q-19.5 0-35.5-0.75t-36.875-3.125-38.125-7.5-34.25-12.875-30.25-20.25-21.5-28.75q-15.5-30.75-15.5-82.75
+        0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25
+        30.875q36.75-8.75 77.25-8.75 37 0 70 8 26.25-20.5
+        46.75-30.25t47.25-9.75q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34
+        99.5z" />
+</svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#1" tabindex="1" class="md-skip">
+        跳转至
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="https://github.com/WangRongsheng" title="教书的先生" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon"></i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            
+              <span class="md-header-nav__topic">
+                教书的先生
+              </span>
+              <span class="md-header-nav__topic">
+                第10章 Python 标准库
+              </span>
+            
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          
+            <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+            
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            键入以开始搜索
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+          
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+
+  <a href="https://github.com/WangRongsheng/" title="前往 Github 仓库" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#__github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      GitHub
+    </div>
+  </a>
+
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+        
+
+  
+
+<nav class="md-tabs md-tabs--active" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href=".." title="介绍" class="md-tabs__link">
+          介绍
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../python.01/" title="Python基础" class="md-tabs__link md-tabs__link--active">
+          Python基础
+        </a>
+      
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="https://github.com/WangRongsheng" title="教书的先生" class="md-nav__button md-logo">
+      
+        <i class="md-icon"></i>
+      
+    </a>
+    教书的先生
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+
+  <a href="https://github.com/WangRongsheng/" title="前往 Github 仓库" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#__github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      GitHub
+    </div>
+  </a>
+
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-1" type="checkbox" id="nav-1">
+    
+    <label class="md-nav__link" for="nav-1">
+      介绍
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-1">
+        介绍
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href=".." title="介绍" class="md-nav__link">
+      介绍
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../about/" title="关于" class="md-nav__link">
+      关于
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
+    
+    <label class="md-nav__link" for="nav-2">
+      Python基础
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        Python基础
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../python.01/" title="第1章 基本语法" class="md-nav__link">
+      第1章 基本语法
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../python.02/" title="第2章 基本数据类型" class="md-nav__link">
+      第2章 基本数据类型
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../python.03/" title="第3章 组合数据类型" class="md-nav__link">
+      第3章 组合数据类型
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../python.04/" title="第4章 程序的控制流程" class="md-nav__link">
+      第4章 程序的控制流程
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../python.05/" title="第5章 函数" class="md-nav__link">
+      第5章 函数
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../python.06/" title="第6章 文件操作" class="md-nav__link">
+      第6章 文件操作
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../python.07/" title="第7章 异常处理" class="md-nav__link">
+      第7章 异常处理
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../python.08/" title="第8章 面向对象" class="md-nav__link">
+      第8章 面向对象
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../python.09/" title="第9章 正则表达式" class="md-nav__link">
+      第9章 正则表达式
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        第10章 Python 标准库
+      </label>
+    
+    <a href="./" title="第10章 Python 标准库" class="md-nav__link md-nav__link--active">
+      第10章 Python 标准库
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">目录</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1" title="1 内置函数" class="md-nav__link">
+    1 内置函数
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" title="2 内置常量" class="md-nav__link">
+    2 内置常量
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3" title="3 内置数据类型" class="md-nav__link">
+    3 内置数据类型
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31" title="3.1 真值测试" class="md-nav__link">
+    3.1 真值测试
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-andornot" title="3.2 布尔操作 - and，or，not" class="md-nav__link">
+    3.2 布尔操作 - and，or，not
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33" title="3.3 比较操作" class="md-nav__link">
+    3.3 比较操作
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#34-intfloatcomplex" title="3.4 数字类型 - int，float，complex" class="md-nav__link">
+    3.4 数字类型 - int，float，complex
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#35" title="3.5 迭代器和生成器类型" class="md-nav__link">
+    3.5 迭代器和生成器类型
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#36-listtuplerange" title="3.6 序列类型 - list，tuple，range" class="md-nav__link">
+    3.6 序列类型 - list，tuple，range
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#37-str" title="3.7 文本序列类型 - str" class="md-nav__link">
+    3.7 文本序列类型 - str
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#38-bytesbytearraymemoryview" title="3.8 二进制序列类型 - bytes，bytearray，memoryview" class="md-nav__link">
+    3.8 二进制序列类型 - bytes，bytearray，memoryview
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#39-setfrozenset" title="3.9 集合类型 - set，frozenset" class="md-nav__link">
+    3.9 集合类型 - set，frozenset
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#310-dict" title="3.10 字典类型 - dict" class="md-nav__link">
+    3.10 字典类型 - dict
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#311" title="3.11 上下文管理器类型" class="md-nav__link">
+    3.11 上下文管理器类型
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#312" title="3.12 其他内置类型" class="md-nav__link">
+    3.12 其他内置类型
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#313-special-attributes" title="3.13 特殊属性 - Special Attributes" class="md-nav__link">
+    3.13 特殊属性 - Special Attributes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4" title="4 内置异常类型" class="md-nav__link">
+    4 内置异常类型
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5" title="5 日期类型" class="md-nav__link">
+    5 日期类型
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6" title="6 数值和数学模块" class="md-nav__link">
+    6 数值和数学模块
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7" title="7 功能编程模块" class="md-nav__link">
+    7 功能编程模块
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8" title="8 访问文件和目录" class="md-nav__link">
+    8 访问文件和目录
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9" title="9 数据持久化" class="md-nav__link">
+    9 数据持久化
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10" title="10 数据压缩和归档" class="md-nav__link">
+    10 数据压缩和归档
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11" title="11 文件格式" class="md-nav__link">
+    11 文件格式
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12" title="12 加密服务" class="md-nav__link">
+    12 加密服务
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13" title="13 通用操作系统服务" class="md-nav__link">
+    13 通用操作系统服务
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#14" title="14 并行计算" class="md-nav__link">
+    14 并行计算
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#15" title="15 进程间通信与网络化" class="md-nav__link">
+    15 进程间通信与网络化
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#16" title="16 互联网数据处理" class="md-nav__link">
+    16 互联网数据处理
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#17" title="17 结构化标记处理工具" class="md-nav__link">
+    17 结构化标记处理工具
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#18" title="18 因特网协议与支持" class="md-nav__link">
+    18 因特网协议与支持
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#19" title="19 多媒体服务" class="md-nav__link">
+    19 多媒体服务
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#20" title="20 国际化" class="md-nav__link">
+    20 国际化
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#21" title="21 程序框架" class="md-nav__link">
+    21 程序框架
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#22-tk" title="22 带有TK的图形用户界面" class="md-nav__link">
+    22 带有TK的图形用户界面
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#23" title="23 开发工具" class="md-nav__link">
+    23 开发工具
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#24" title="24 调试与分析" class="md-nav__link">
+    24 调试与分析
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#25" title="25 软件包装与分发" class="md-nav__link">
+    25 软件包装与分发
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#26-python" title="26 Python 运行时服务" class="md-nav__link">
+    26 Python 运行时服务
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#27-python" title="27 自定义 Python 解释器" class="md-nav__link">
+    27 自定义 Python 解释器
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#28" title="28 导入模块" class="md-nav__link">
+    28 导入模块
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#29-python" title="29 Python 语言服务" class="md-nav__link">
+    29 Python 语言服务
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#30" title="30 杂项服务" class="md-nav__link">
+    30 杂项服务
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#31-windows" title="31 微软 Windows 特定服务" class="md-nav__link">
+    31 微软 Windows 特定服务
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#32-unix" title="32 Unix 特定服务" class="md-nav__link">
+    32 Unix 特定服务
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#33_1" title="33 取代模块" class="md-nav__link">
+    33 取代模块
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#34" title="34 无证模块" class="md-nav__link">
+    34 无证模块
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">目录</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1" title="1 内置函数" class="md-nav__link">
+    1 内置函数
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" title="2 内置常量" class="md-nav__link">
+    2 内置常量
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3" title="3 内置数据类型" class="md-nav__link">
+    3 内置数据类型
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31" title="3.1 真值测试" class="md-nav__link">
+    3.1 真值测试
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-andornot" title="3.2 布尔操作 - and，or，not" class="md-nav__link">
+    3.2 布尔操作 - and，or，not
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33" title="3.3 比较操作" class="md-nav__link">
+    3.3 比较操作
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#34-intfloatcomplex" title="3.4 数字类型 - int，float，complex" class="md-nav__link">
+    3.4 数字类型 - int，float，complex
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#35" title="3.5 迭代器和生成器类型" class="md-nav__link">
+    3.5 迭代器和生成器类型
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#36-listtuplerange" title="3.6 序列类型 - list，tuple，range" class="md-nav__link">
+    3.6 序列类型 - list，tuple，range
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#37-str" title="3.7 文本序列类型 - str" class="md-nav__link">
+    3.7 文本序列类型 - str
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#38-bytesbytearraymemoryview" title="3.8 二进制序列类型 - bytes，bytearray，memoryview" class="md-nav__link">
+    3.8 二进制序列类型 - bytes，bytearray，memoryview
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#39-setfrozenset" title="3.9 集合类型 - set，frozenset" class="md-nav__link">
+    3.9 集合类型 - set，frozenset
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#310-dict" title="3.10 字典类型 - dict" class="md-nav__link">
+    3.10 字典类型 - dict
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#311" title="3.11 上下文管理器类型" class="md-nav__link">
+    3.11 上下文管理器类型
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#312" title="3.12 其他内置类型" class="md-nav__link">
+    3.12 其他内置类型
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#313-special-attributes" title="3.13 特殊属性 - Special Attributes" class="md-nav__link">
+    3.13 特殊属性 - Special Attributes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4" title="4 内置异常类型" class="md-nav__link">
+    4 内置异常类型
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5" title="5 日期类型" class="md-nav__link">
+    5 日期类型
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6" title="6 数值和数学模块" class="md-nav__link">
+    6 数值和数学模块
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7" title="7 功能编程模块" class="md-nav__link">
+    7 功能编程模块
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8" title="8 访问文件和目录" class="md-nav__link">
+    8 访问文件和目录
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9" title="9 数据持久化" class="md-nav__link">
+    9 数据持久化
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10" title="10 数据压缩和归档" class="md-nav__link">
+    10 数据压缩和归档
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11" title="11 文件格式" class="md-nav__link">
+    11 文件格式
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12" title="12 加密服务" class="md-nav__link">
+    12 加密服务
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13" title="13 通用操作系统服务" class="md-nav__link">
+    13 通用操作系统服务
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#14" title="14 并行计算" class="md-nav__link">
+    14 并行计算
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#15" title="15 进程间通信与网络化" class="md-nav__link">
+    15 进程间通信与网络化
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#16" title="16 互联网数据处理" class="md-nav__link">
+    16 互联网数据处理
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#17" title="17 结构化标记处理工具" class="md-nav__link">
+    17 结构化标记处理工具
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#18" title="18 因特网协议与支持" class="md-nav__link">
+    18 因特网协议与支持
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#19" title="19 多媒体服务" class="md-nav__link">
+    19 多媒体服务
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#20" title="20 国际化" class="md-nav__link">
+    20 国际化
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#21" title="21 程序框架" class="md-nav__link">
+    21 程序框架
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#22-tk" title="22 带有TK的图形用户界面" class="md-nav__link">
+    22 带有TK的图形用户界面
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#23" title="23 开发工具" class="md-nav__link">
+    23 开发工具
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#24" title="24 调试与分析" class="md-nav__link">
+    24 调试与分析
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#25" title="25 软件包装与分发" class="md-nav__link">
+    25 软件包装与分发
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#26-python" title="26 Python 运行时服务" class="md-nav__link">
+    26 Python 运行时服务
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#27-python" title="27 自定义 Python 解释器" class="md-nav__link">
+    27 自定义 Python 解释器
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#28" title="28 导入模块" class="md-nav__link">
+    28 导入模块
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#29-python" title="29 Python 语言服务" class="md-nav__link">
+    29 Python 语言服务
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#30" title="30 杂项服务" class="md-nav__link">
+    30 杂项服务
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#31-windows" title="31 微软 Windows 特定服务" class="md-nav__link">
+    31 微软 Windows 特定服务
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#32-unix" title="32 Unix 特定服务" class="md-nav__link">
+    32 Unix 特定服务
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#33_1" title="33 取代模块" class="md-nav__link">
+    33 取代模块
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#34" title="34 无证模块" class="md-nav__link">
+    34 无证模块
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/WangRongsheng/edit/master/docs/python.10.md" title="编辑此页" class="md-icon md-content__icon">&#xE3C9;</a>
+                
+                
+                  <h1>第10章 Python 标准库</h1>
+                
+                <h2 id="1">1 内置函数<a class="headerlink" href="#1" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>abs()</th>
+<th>dict()</th>
+<th>help()</th>
+<th>min()</th>
+<th>setattr()</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>all()</td>
+<td>dir()</td>
+<td>hex()</td>
+<td>next()</td>
+<td>slice()</td>
+</tr>
+<tr>
+<td>any()</td>
+<td>divmod()</td>
+<td>id()</td>
+<td>object()</td>
+<td>sorted()</td>
+</tr>
+<tr>
+<td>ascii()</td>
+<td>enumerate()</td>
+<td>input()</td>
+<td>oct()</td>
+<td>staticmethod()</td>
+</tr>
+<tr>
+<td>bin()</td>
+<td>eval()</td>
+<td>int()</td>
+<td>open()</td>
+<td>str()</td>
+</tr>
+<tr>
+<td>bool()</td>
+<td>exec()</td>
+<td>isinstance()</td>
+<td>ord()</td>
+<td>sum()</td>
+</tr>
+<tr>
+<td>byterarray()</td>
+<td>filter()</td>
+<td>issubclass()</td>
+<td>pow()</td>
+<td>super()</td>
+</tr>
+<tr>
+<td>bytes()</td>
+<td>float()</td>
+<td>iter()</td>
+<td>print()</td>
+<td>tuple()</td>
+</tr>
+<tr>
+<td>callable()</td>
+<td>format()</td>
+<td>len()</td>
+<td>property()</td>
+<td>type()</td>
+</tr>
+<tr>
+<td>chr()</td>
+<td>frozenset()</td>
+<td>list()</td>
+<td>range()</td>
+<td>vars()</td>
+</tr>
+<tr>
+<td>classmethod()</td>
+<td>getattr()</td>
+<td>locals()</td>
+<td>repr()</td>
+<td>zip()</td>
+</tr>
+<tr>
+<td>compile()</td>
+<td>globals()</td>
+<td>map()</td>
+<td>reversed()</td>
+<td>__import__()</td>
+</tr>
+<tr>
+<td>complex()</td>
+<td>hasattr()</td>
+<td>max()</td>
+<td>round()</td>
+<td></td>
+</tr>
+<tr>
+<td>delattr()</td>
+<td>hash()</td>
+<td>memoryview()</td>
+<td>set()</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="2">2 内置常量<a class="headerlink" href="#2" title="Permanent link">&para;</a></h2>
+<ol>
+<li>False</li>
+<li>True</li>
+<li>None</li>
+<li>NotImplemented</li>
+<li>Ellipsis</li>
+<li>__debug__</li>
+</ol>
+<h2 id="3">3 内置数据类型<a class="headerlink" href="#3" title="Permanent link">&para;</a></h2>
+<h3 id="31">3.1 真值测试<a class="headerlink" href="#31" title="Permanent link">&para;</a></h3>
+<p>以下内置对象被认为是 False：
+1. 定义为 False 的变量：None 和 False
+2. 数字0类型：0，0.0，0j，Decimal(0)，Fraction(0, 1)
+3. 空序列和集合：' '，( )，[ ]，{ }，set()，range(0)
+此外，0 和 False 等价，1 和 True 等价。</p>
+<h3 id="32-andornot">3.2 布尔操作 - and，or，not<a class="headerlink" href="#32-andornot" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>操作</th>
+<th>结果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>x or y</td>
+<td>如果 x 为假，则 y，否则 x</td>
+</tr>
+<tr>
+<td>x and y</td>
+<td>如果 x 为假，则 x，否则 y</td>
+</tr>
+<tr>
+<td>not x</td>
+<td>如果 x 为假，则真，否则假</td>
+</tr>
+</tbody>
+</table>
+<h3 id="33">3.3 比较操作<a class="headerlink" href="#33" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>操作</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&lt;</td>
+<td>严格小于</td>
+</tr>
+<tr>
+<td>&lt;=</td>
+<td>小于或等于</td>
+</tr>
+<tr>
+<td>&gt;</td>
+<td>严格大于</td>
+</tr>
+<tr>
+<td>&gt;=</td>
+<td>大于或等于</td>
+</tr>
+<tr>
+<td>==</td>
+<td>等于</td>
+</tr>
+<tr>
+<td>!=</td>
+<td>不等于</td>
+</tr>
+<tr>
+<td>is</td>
+<td>属于</td>
+</tr>
+<tr>
+<td>is not</td>
+<td>不属于</td>
+</tr>
+</tbody>
+</table>
+<h3 id="34-intfloatcomplex">3.4 数字类型 - int，float，complex<a class="headerlink" href="#34-intfloatcomplex" title="Permanent link">&para;</a></h3>
+<p>数字类型包括：整数、浮点数和复数，分别使用 int()，float()，complex()创建。对于一个复数 z，分别使用 z.real 和 z.imag 获得实部和虚部。</p>
+<p>数字类型操作运算：
+操作|结果
+-|-
+x + y | x 和 y 的和
+x - y| x 和 y 的差
+x * y | x 和 y 的积
+x / y | x 和 y 的商
+x // y | x 和 y 的商向下取整
+x % y | x / y 的余数
+-x | x 的相反数
++x | x
+abs(x) | x 的绝对值
+int(x) | 把 x 转化成整数
+float(x) | 把 x 转化成浮点数
+complex(re, im) | 把 re 转化成实部，im 转化成虚部
+c.conjugate() | 复数 c 的共轭复数
+divmod(x, y) | 元组(x // y, x % y)
+pow(x, y) | x 的 y 次方
+x ** y | x 的 y 次方</p>
+<h3 id="35">3.5 迭代器和生成器类型<a class="headerlink" href="#35" title="Permanent link">&para;</a></h3>
+<p>iterator.__iter__()
+iterator.__next__()</p>
+<h3 id="36-listtuplerange">3.6 序列类型 - list，tuple，range<a class="headerlink" href="#36-listtuplerange" title="Permanent link">&para;</a></h3>
+<ol>
+<li>序列类型操作运算：</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>操作</th>
+<th>结果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>x in s</td>
+<td>如果 x 是 s 子串，返回真，否则假</td>
+</tr>
+<tr>
+<td>x not in s</td>
+<td>如果 x 不是 s 子串，返回真，否则假</td>
+</tr>
+<tr>
+<td>s + t</td>
+<td>连接 s 和 t</td>
+</tr>
+<tr>
+<td>s * n 或 n * s</td>
+<td>重复 n 次 s</td>
+</tr>
+<tr>
+<td>s[i]</td>
+<td>s 的第 i 项，从 0 开始</td>
+</tr>
+<tr>
+<td>s[i: j]</td>
+<td>切片，从 s 的 第 i 项到第 j - 1 项</td>
+</tr>
+<tr>
+<td>s[i: j: k]</td>
+<td>切片，以步长 k 从 s 的 第 i 项到第 j - 1 项</td>
+</tr>
+<tr>
+<td>len(s)</td>
+<td>s 的长度</td>
+</tr>
+<tr>
+<td>min(s)</td>
+<td>s 的最小项</td>
+</tr>
+<tr>
+<td>max(s)</td>
+<td>s 的最大项</td>
+</tr>
+<tr>
+<td>s.index(x[, i[, j]])</td>
+<td>x 在 s 中第一次出现的位置，在 s 的 i 到 j-1 之间</td>
+</tr>
+<tr>
+<td>s.count(x)</td>
+<td>x 在 s 中出现的次数</td>
+</tr>
+</tbody>
+</table>
+<ol>
+<li>可变序列操作运算：</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>操作</th>
+<th>结果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>s[i] = x</td>
+<td>用 x 替换 s 中的第 i 项</td>
+</tr>
+<tr>
+<td>s[i: j] = t</td>
+<td>用可迭代 t 替换切片 s 从 i 到 j-1</td>
+</tr>
+<tr>
+<td>del s[i: j]</td>
+<td>删除切片 s 从 i 到 j-1，等价于 s[i: j] = [ ]</td>
+</tr>
+<tr>
+<td>s[i: j: k] = t</td>
+<td>用 t 替代 s[i: j: k] 中的元素</td>
+</tr>
+<tr>
+<td>del s[i: j: k]</td>
+<td>删除 s[i: j: k] 中的元素</td>
+</tr>
+<tr>
+<td>s.append(x)</td>
+<td>把 x 添加到序列末尾，等价于 s[len(s): len(s)] = [x]</td>
+</tr>
+<tr>
+<td>s.clear()</td>
+<td>移除 s 所有元素，等价于 del s[:]</td>
+</tr>
+<tr>
+<td>s.copy()</td>
+<td>创建 s 的副本，等价于 s[:]</td>
+</tr>
+<tr>
+<td>s.extend(t) 或 s += t</td>
+<td>把 t 添加到 s，等价于 s[len(s): len(s)] = t</td>
+</tr>
+<tr>
+<td>s *= n</td>
+<td>更新并重复 n 次 s</td>
+</tr>
+<tr>
+<td>s.insert(i, x)</td>
+<td>把 x 插入到 s 的第 i 个位置</td>
+</tr>
+<tr>
+<td>s.pop([i])</td>
+<td>从 s 中移除第 i 个位置的元素，默认是最后一个</td>
+</tr>
+<tr>
+<td>s.remove(x)</td>
+<td>移除在 s 中出现的第一个 x</td>
+</tr>
+<tr>
+<td>s.reverse()</td>
+<td>把 s 的所有元素反转</td>
+</tr>
+</tbody>
+</table>
+<ol>
+<li>
+<p>列表 -  Lists
+创建列表的方法：
+（1）使用一对中括号创建一个空列表：[ ]
+（2）使用一对中括号，元素之间用逗号分隔：[a]或[a, b, c]
+（3）使用一个列表理解：[x for x in iterable]
+（4）使用类型构造函数：list() 或 list(iterable)</p>
+</li>
+<li>
+<p>元组 - Tuples
+创建元组的方法：
+（1）使用一对小括号创建一个空元祖：( )
+（2）使用一个逗号创建只有一项的元组：a, 或(a,)
+（3）使用逗号分隔：a, b, c 或 (a, b, c)
+（4）使用内置 tuple() 函数：tuple() 或 tuple(iterable)</p>
+</li>
+<li>
+<p>随机序列 - Ranges
+class range(stop)
+class range(start, stop[, step])</p>
+</li>
+</ol>
+<h3 id="37-str">3.7 文本序列类型 - str<a class="headerlink" href="#37-str" title="Permanent link">&para;</a></h3>
+<p>字符串表示形式：
+（1）单引号：'允许包含"双"引号'
+（2）双引号："允许包含'单'引号"
+（3）三引号：'''三单引号''' 或 """三双引号"""</p>
+<h3 id="38-bytesbytearraymemoryview">3.8 二进制序列类型 - bytes，bytearray，memoryview<a class="headerlink" href="#38-bytesbytearraymemoryview" title="Permanent link">&para;</a></h3>
+<ol>
+<li>
+<p>bytes 表示形式：
+（1）单引号：b'允许包含"双"引号'
+（2）双引号：b"允许包含'单'引号"
+（3）三引号：b'''三单引号''' 或 b"""三双引号"""</p>
+</li>
+<li>
+<p>bytearray 表示形式：
+（1）创建一个空实例：bytearray()
+（2）创建一个给定长度的0填充实例：bytearray(10)
+（3）从一个整型可迭代对象创建：bytearray(range(20))
+（4）从一个存在的二进制数据复制：bytearray(b'Hi!')</p>
+</li>
+<li>
+<p>memoryview 表示形式：
+使用 memoryview()</p>
+</li>
+</ol>
+<h3 id="39-setfrozenset">3.9 集合类型 - set，frozenset<a class="headerlink" href="#39-setfrozenset" title="Permanent link">&para;</a></h3>
+<h3 id="310-dict">3.10 字典类型 - dict<a class="headerlink" href="#310-dict" title="Permanent link">&para;</a></h3>
+<h3 id="311">3.11 上下文管理器类型<a class="headerlink" href="#311" title="Permanent link">&para;</a></h3>
+<p>使用 with</p>
+<h3 id="312">3.12 其他内置类型<a class="headerlink" href="#312" title="Permanent link">&para;</a></h3>
+<ol>
+<li>模块 - Modules</li>
+<li>类和类实例 - Classes，Class Instances</li>
+<li>函数 - Functions</li>
+<li>方法 - Methods</li>
+<li>代码对象 - Code Objects</li>
+<li>类型对象 - Type Objects</li>
+<li>空值对象 - Null Object</li>
+<li>省略对象 - Ellipsis Object</li>
+<li>非实现对象 - NotImplemented Obejct</li>
+<li>布尔值 - Boolean Values</li>
+<li>内部对象 - Internal Objects</li>
+</ol>
+<h3 id="313-special-attributes">3.13 特殊属性 - Special Attributes<a class="headerlink" href="#313-special-attributes" title="Permanent link">&para;</a></h3>
+<h2 id="4">4 内置异常类型<a class="headerlink" href="#4" title="Permanent link">&para;</a></h2>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="ne">BaseException</span>
+ <span class="o">+--</span> <span class="ne">SystemExit</span>
+ <span class="o">+--</span> <span class="ne">KeyboardInterrupt</span>
+ <span class="o">+--</span> <span class="ne">GeneratorExit</span>
+ <span class="o">+--</span> <span class="ne">Exception</span>
+      <span class="o">+--</span> <span class="ne">StopIteration</span>
+      <span class="o">+--</span> <span class="ne">StopAsyncIteration</span>
+      <span class="o">+--</span> <span class="ne">ArithmeticError</span>
+      <span class="o">|</span>    <span class="o">+--</span> <span class="ne">FloatingPointError</span>
+      <span class="o">|</span>    <span class="o">+--</span> <span class="ne">OverflowError</span>
+      <span class="o">|</span>    <span class="o">+--</span> <span class="ne">ZeroDivisionError</span>
+      <span class="o">+--</span> <span class="ne">AssertionError</span>
+      <span class="o">+--</span> <span class="ne">AttributeError</span>
+      <span class="o">+--</span> <span class="n">BufferError</span>
+      <span class="o">+--</span> <span class="ne">EOFError</span>
+      <span class="o">+--</span> <span class="ne">ImportError</span>
+      <span class="o">|</span>    <span class="o">+--</span> <span class="ne">ModuleNotFoundError</span>
+      <span class="o">+--</span> <span class="ne">LookupError</span>
+      <span class="o">|</span>    <span class="o">+--</span> <span class="ne">IndexError</span>
+      <span class="o">|</span>    <span class="o">+--</span> <span class="ne">KeyError</span>
+      <span class="o">+--</span> <span class="ne">MemoryError</span>
+      <span class="o">+--</span> <span class="ne">NameError</span>
+      <span class="o">|</span>    <span class="o">+--</span> <span class="ne">UnboundLocalError</span>
+      <span class="o">+--</span> <span class="ne">OSError</span>
+      <span class="o">|</span>    <span class="o">+--</span> <span class="n">BlockingIOError</span>
+      <span class="o">|</span>    <span class="o">+--</span> <span class="n">ChildProcessError</span>
+      <span class="o">|</span>    <span class="o">+--</span> <span class="n">ConnectionError</span>
+      <span class="o">|</span>    <span class="o">|</span>    <span class="o">+--</span> <span class="n">BrokenPipeError</span>
+      <span class="o">|</span>    <span class="o">|</span>    <span class="o">+--</span> <span class="n">ConnectionAbortedError</span>
+      <span class="o">|</span>    <span class="o">|</span>    <span class="o">+--</span> <span class="n">ConnectionRefusedError</span>
+      <span class="o">|</span>    <span class="o">|</span>    <span class="o">+--</span> <span class="n">ConnectionResetError</span>
+      <span class="o">|</span>    <span class="o">+--</span> <span class="n">FileExistsError</span>
+      <span class="o">|</span>    <span class="o">+--</span> <span class="n">FileNotFoundError</span>
+      <span class="o">|</span>    <span class="o">+--</span> <span class="n">InterruptedError</span>
+      <span class="o">|</span>    <span class="o">+--</span> <span class="n">IsADirectoryError</span>
+      <span class="o">|</span>    <span class="o">+--</span> <span class="n">NotADirectoryError</span>
+      <span class="o">|</span>    <span class="o">+--</span> <span class="n">PermissionError</span>
+      <span class="o">|</span>    <span class="o">+--</span> <span class="n">ProcessLookupError</span>
+      <span class="o">|</span>    <span class="o">+--</span> <span class="n">TimeoutError</span>
+      <span class="o">+--</span> <span class="ne">ReferenceError</span>
+      <span class="o">+--</span> <span class="ne">RuntimeError</span>
+      <span class="o">|</span>    <span class="o">+--</span> <span class="ne">NotImplementedError</span>
+      <span class="o">|</span>    <span class="o">+--</span> <span class="ne">RecursionError</span>
+      <span class="o">+--</span> <span class="ne">SyntaxError</span>
+      <span class="o">|</span>    <span class="o">+--</span> <span class="ne">IndentationError</span>
+      <span class="o">|</span>         <span class="o">+--</span> <span class="ne">TabError</span>
+      <span class="o">+--</span> <span class="ne">SystemError</span>
+      <span class="o">+--</span> <span class="ne">TypeError</span>
+      <span class="o">+--</span> <span class="ne">ValueError</span>
+      <span class="o">|</span>    <span class="o">+--</span> <span class="ne">UnicodeError</span>
+      <span class="o">|</span>         <span class="o">+--</span> <span class="ne">UnicodeDecodeError</span>
+      <span class="o">|</span>         <span class="o">+--</span> <span class="ne">UnicodeEncodeError</span>
+      <span class="o">|</span>         <span class="o">+--</span> <span class="ne">UnicodeTranslateError</span>
+      <span class="o">+--</span> <span class="ne">Warning</span>
+           <span class="o">+--</span> <span class="ne">DeprecationWarning</span>
+           <span class="o">+--</span> <span class="ne">PendingDeprecationWarning</span>
+           <span class="o">+--</span> <span class="ne">RuntimeWarning</span>
+           <span class="o">+--</span> <span class="ne">SyntaxWarning</span>
+           <span class="o">+--</span> <span class="ne">UserWarning</span>
+           <span class="o">+--</span> <span class="ne">FutureWarning</span>
+           <span class="o">+--</span> <span class="ne">ImportWarning</span>
+           <span class="o">+--</span> <span class="ne">UnicodeWarning</span>
+           <span class="o">+--</span> <span class="n">BytesWarning</span>
+           <span class="o">+--</span> <span class="n">ResourceWarning</span>
+</pre></div>
+</td></tr></table>
+
+<h2 id="5">5 日期类型<a class="headerlink" href="#5" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>datetime</td>
+<td>基本日期和时间类型</td>
+</tr>
+<tr>
+<td>calendar</td>
+<td>通用日历相关函数</td>
+</tr>
+<tr>
+<td>collections</td>
+<td>容器数据类型</td>
+</tr>
+<tr>
+<td>collections.abc</td>
+<td>抽象基类容器</td>
+</tr>
+<tr>
+<td>heapq</td>
+<td>堆栈类算法</td>
+</tr>
+<tr>
+<td>bisect</td>
+<td>矩阵二分算法</td>
+</tr>
+<tr>
+<td>array</td>
+<td>高效的数值数组</td>
+</tr>
+<tr>
+<td>weakref</td>
+<td>弱引用</td>
+</tr>
+<tr>
+<td>types</td>
+<td>动态类型创建和内置类型名称</td>
+</tr>
+<tr>
+<td>copy</td>
+<td>浅复制和深复制</td>
+</tr>
+<tr>
+<td>pprint</td>
+<td>优质数据打印</td>
+</tr>
+<tr>
+<td>reprlib</td>
+<td>交替 repr() 实现</td>
+</tr>
+<tr>
+<td>enum</td>
+<td>枚举支持</td>
+</tr>
+</tbody>
+</table>
+<h2 id="6">6 数值和数学模块<a class="headerlink" href="#6" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>numbers</td>
+<td>数值抽象基类</td>
+</tr>
+<tr>
+<td>math</td>
+<td>数学函数</td>
+</tr>
+<tr>
+<td>cmath</td>
+<td>复数数学函数</td>
+</tr>
+<tr>
+<td>decimal</td>
+<td>十进制定点和浮点运算</td>
+</tr>
+<tr>
+<td>fractions</td>
+<td>有理数</td>
+</tr>
+<tr>
+<td>random</td>
+<td>生成伪随机数</td>
+</tr>
+<tr>
+<td>statistics</td>
+<td>数理统计函数</td>
+</tr>
+</tbody>
+</table>
+<h2 id="7">7 功能编程模块<a class="headerlink" href="#7" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>itertools</td>
+<td>创建高效循环的迭代器函数</td>
+</tr>
+<tr>
+<td>functools</td>
+<td>高阶函数及其在可调用对象上的操作</td>
+</tr>
+<tr>
+<td>operator</td>
+<td>标准操作函数</td>
+</tr>
+</tbody>
+</table>
+<h2 id="8">8 访问文件和目录<a class="headerlink" href="#8" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>pathlib</td>
+<td>面向对象的文件系统路径</td>
+</tr>
+<tr>
+<td>os.path</td>
+<td>常用路径名操作</td>
+</tr>
+<tr>
+<td>fileinput</td>
+<td>遍历多行输入流</td>
+</tr>
+<tr>
+<td>stat</td>
+<td>解释 stat() 结果</td>
+</tr>
+<tr>
+<td>filecmp</td>
+<td>比较文件和目录</td>
+</tr>
+<tr>
+<td>tempfile</td>
+<td>生成临时文件和目录</td>
+</tr>
+<tr>
+<td>glob</td>
+<td>Unix 风格路径名模式扩展</td>
+</tr>
+<tr>
+<td>fnmatch</td>
+<td>Unix 文件名模式匹配</td>
+</tr>
+<tr>
+<td>lincache</td>
+<td>随机访问文本行</td>
+</tr>
+<tr>
+<td>shutil</td>
+<td>高级文件操作</td>
+</tr>
+<tr>
+<td>macpath</td>
+<td>Mac 9 路径操作函数</td>
+</tr>
+</tbody>
+</table>
+<h2 id="9">9 数据持久化<a class="headerlink" href="#9" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>pickle</td>
+<td>Python 对象序列化</td>
+</tr>
+<tr>
+<td>copyreg</td>
+<td>注册 pickle 支持函数</td>
+</tr>
+<tr>
+<td>shelve</td>
+<td>Python 对象持久化</td>
+</tr>
+<tr>
+<td>marshal</td>
+<td>内部 Python 对象序列化</td>
+</tr>
+<tr>
+<td>dbm</td>
+<td>Unix 数据库接口</td>
+</tr>
+<tr>
+<td>sqlite3</td>
+<td>SQLite 数据库 DB-API 2.0 接口</td>
+</tr>
+</tbody>
+</table>
+<h2 id="10">10 数据压缩和归档<a class="headerlink" href="#10" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>zlib</td>
+<td>兼容 gzip 的压缩</td>
+</tr>
+<tr>
+<td>gzip</td>
+<td>支持 gzip 文件</td>
+</tr>
+<tr>
+<td>bz2</td>
+<td>支持 bzip2 压缩</td>
+</tr>
+<tr>
+<td>lzma</td>
+<td>使用 LZMA 算法压缩</td>
+</tr>
+<tr>
+<td>zipfile</td>
+<td>与 ZIP 文档工作</td>
+</tr>
+<tr>
+<td>tarfile</td>
+<td>读写 tar 文档文件</td>
+</tr>
+</tbody>
+</table>
+<h2 id="11">11 文件格式<a class="headerlink" href="#11" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>csv</td>
+<td>CSV 文件读写</td>
+</tr>
+<tr>
+<td>configparser</td>
+<td>配置文件解析器</td>
+</tr>
+<tr>
+<td>netrc</td>
+<td>netrc 文件处理</td>
+</tr>
+<tr>
+<td>xdrlib</td>
+<td>编解码 XDR 数据</td>
+</tr>
+<tr>
+<td>plistlib</td>
+<td>生成和解析 Mac OS X .plist 文件</td>
+</tr>
+</tbody>
+</table>
+<h2 id="12">12 加密服务<a class="headerlink" href="#12" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>hashlib</td>
+<td>安全离散和消息摘要</td>
+</tr>
+<tr>
+<td>hmac</td>
+<td>用于消息认证的密钥离散</td>
+</tr>
+<tr>
+<td>secrets</td>
+<td>生成用于管理秘密的安全随机数</td>
+</tr>
+</tbody>
+</table>
+<h2 id="13">13 通用操作系统服务<a class="headerlink" href="#13" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>os</td>
+<td>操作系统接口</td>
+</tr>
+<tr>
+<td>io</td>
+<td>与流一起工作的核心工具</td>
+</tr>
+<tr>
+<td>time</td>
+<td>时间访问与转换</td>
+</tr>
+<tr>
+<td>argparse</td>
+<td>命令行选项、参数和子命令的解析器</td>
+</tr>
+<tr>
+<td>getopt</td>
+<td>C 样式的命令行选项解析器</td>
+</tr>
+<tr>
+<td>logging</td>
+<td>Python 日志设备</td>
+</tr>
+<tr>
+<td>logging.config</td>
+<td>配置日志</td>
+</tr>
+<tr>
+<td>logging.handlers</td>
+<td>日志处理程序</td>
+</tr>
+<tr>
+<td>getpass</td>
+<td>便携式密码输入</td>
+</tr>
+<tr>
+<td>curses</td>
+<td>字符单元显示器的终端处理</td>
+</tr>
+<tr>
+<td>curses.textpad</td>
+<td>文本输入部件程序</td>
+</tr>
+<tr>
+<td>curses.ascii</td>
+<td>ASCII 输入的实用工具</td>
+</tr>
+<tr>
+<td>surses.panel</td>
+<td>面板堆栈扩展</td>
+</tr>
+<tr>
+<td>platform</td>
+<td>访问底层平台的标识数据</td>
+</tr>
+<tr>
+<td>errno</td>
+<td>标准 errno 系统符号</td>
+</tr>
+<tr>
+<td>ctypes</td>
+<td>Python 的一个异域函数库</td>
+</tr>
+</tbody>
+</table>
+<h2 id="14">14 并行计算<a class="headerlink" href="#14" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>threading</td>
+<td>基于线程的并行性</td>
+</tr>
+<tr>
+<td>multiprocessing</td>
+<td>基于过程的并行性</td>
+</tr>
+<tr>
+<td>concurrent</td>
+<td>concurrent 包</td>
+</tr>
+<tr>
+<td>concurrent.futures</td>
+<td>启动并行任务</td>
+</tr>
+<tr>
+<td>subprocess</td>
+<td>子过程管理</td>
+</tr>
+<tr>
+<td>sched</td>
+<td>时间调度器</td>
+</tr>
+<tr>
+<td>queue</td>
+<td>同步队列类</td>
+</tr>
+<tr>
+<td>dummy_threading</td>
+<td>更换 threading 模块</td>
+</tr>
+<tr>
+<td>_thread</td>
+<td>低层线程 API</td>
+</tr>
+<tr>
+<td>_dummy_thread</td>
+<td>更换 _thread 模块</td>
+</tr>
+</tbody>
+</table>
+<h2 id="15">15 进程间通信与网络化<a class="headerlink" href="#15" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>socket</td>
+<td>底层网络接口</td>
+</tr>
+<tr>
+<td>ssl</td>
+<td>套接字对象的 TSL/SSL 包装器</td>
+</tr>
+<tr>
+<td>select</td>
+<td>等待 I/O 完成</td>
+</tr>
+<tr>
+<td>selectors</td>
+<td>高级 I/O 复用</td>
+</tr>
+<tr>
+<td>asyncio</td>
+<td>异步I/O、事件循环、协同程序和任务</td>
+</tr>
+<tr>
+<td>asyncore</td>
+<td>异步套接字处理程序</td>
+</tr>
+<tr>
+<td>asynchat</td>
+<td>异步套接字命令/响应处理器</td>
+</tr>
+<tr>
+<td>signal</td>
+<td>设置异步事件的处理程序</td>
+</tr>
+<tr>
+<td>mmap</td>
+<td>内存映射文件支持</td>
+</tr>
+</tbody>
+</table>
+<h2 id="16">16 互联网数据处理<a class="headerlink" href="#16" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>email</td>
+<td>电子邮件和 MIME 处理包</td>
+</tr>
+<tr>
+<td>json</td>
+<td>JSON 编解码</td>
+</tr>
+<tr>
+<td>mailcap</td>
+<td>Mailcap 文件处理</td>
+</tr>
+<tr>
+<td>mailbox</td>
+<td>操作各种格式的邮箱</td>
+</tr>
+<tr>
+<td>mimetypes</td>
+<td>将文件名映射到MIME类型</td>
+</tr>
+<tr>
+<td>base64</td>
+<td>Base16, Base32, Base64, Base85 数据编码</td>
+</tr>
+<tr>
+<td>binhex</td>
+<td>编解码 binhex4 文件</td>
+</tr>
+<tr>
+<td>binascii</td>
+<td>二进制和 ASCII 转换</td>
+</tr>
+<tr>
+<td>quopri</td>
+<td>对MIME引用的可打印数据进行编解码</td>
+</tr>
+<tr>
+<td>uu</td>
+<td>编解码 uuencode 文件</td>
+</tr>
+</tbody>
+</table>
+<h2 id="17">17 结构化标记处理工具<a class="headerlink" href="#17" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>html</td>
+<td>支持 HTML</td>
+</tr>
+<tr>
+<td>html.parser</td>
+<td>简单 HTML 和 HTML 解析器</td>
+</tr>
+<tr>
+<td>html.entities</td>
+<td>HTML通用实体的定义</td>
+</tr>
+<tr>
+<td>xml</td>
+<td>XML 处理模块</td>
+</tr>
+<tr>
+<td>xml.etree.ElementTree</td>
+<td>XML 元素树 API</td>
+</tr>
+<tr>
+<td>xml.dom</td>
+<td>XML DOM</td>
+</tr>
+<tr>
+<td>xml.dom.minidom</td>
+<td>XML 最小 DOM 实现</td>
+</tr>
+<tr>
+<td>xml.dom.pulldom</td>
+<td>XML 支持部分 DOM 树的构建</td>
+</tr>
+<tr>
+<td>xml.sax</td>
+<td>XML 支持 SAX2 解析器</td>
+</tr>
+<tr>
+<td>xml.sax.handler</td>
+<td>XML SAX 处理程序的基类</td>
+</tr>
+<tr>
+<td>xml.sax.saxutils</td>
+<td>XML SAX 实用工具</td>
+</tr>
+<tr>
+<td>xml.sax.xmlreader</td>
+<td>XML 解析器接口</td>
+</tr>
+<tr>
+<td>xml.parsers.expat</td>
+<td>使用 Expat 快速 XML 解析</td>
+</tr>
+</tbody>
+</table>
+<h2 id="18">18 因特网协议与支持<a class="headerlink" href="#18" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>webbrowser</td>
+<td>方便的Web浏览器控制器</td>
+</tr>
+<tr>
+<td>cgi</td>
+<td>公共网关接口支持</td>
+</tr>
+<tr>
+<td>cgitb</td>
+<td>CGI 脚本回溯管理器</td>
+</tr>
+<tr>
+<td>wsgiref</td>
+<td>WSGI 实用工具和参考实现</td>
+</tr>
+<tr>
+<td>urllib</td>
+<td>URL 处理模块</td>
+</tr>
+<tr>
+<td>urllib.request</td>
+<td>打开 URL 的扩展库</td>
+</tr>
+<tr>
+<td>urllib.response</td>
+<td>urllib 使用的响应类</td>
+</tr>
+<tr>
+<td>urllib.parse</td>
+<td>将 URL 解析成组件</td>
+</tr>
+<tr>
+<td>urllib.error</td>
+<td>由 urllib 请求引发的异常类</td>
+</tr>
+<tr>
+<td>urllib.robotparser</td>
+<td>robots.txt 解析器</td>
+</tr>
+<tr>
+<td>http</td>
+<td>HTTP 模块</td>
+</tr>
+<tr>
+<td>http.client</td>
+<td>HTTP 协议客户端</td>
+</tr>
+<tr>
+<td>ftplib</td>
+<td>FTP 协议客户端</td>
+</tr>
+<tr>
+<td>poplib</td>
+<td>POP3 协议客户端</td>
+</tr>
+<tr>
+<td>imaplib</td>
+<td>IMAP4 协议客户端</td>
+</tr>
+<tr>
+<td>nntplib</td>
+<td>NNTP 协议客户端</td>
+</tr>
+<tr>
+<td>smtplib</td>
+<td>SMTP 协议客户端</td>
+</tr>
+<tr>
+<td>smtpd</td>
+<td>SMTP 服务器</td>
+</tr>
+<tr>
+<td>telnetlib</td>
+<td>Telnet 客户端</td>
+</tr>
+<tr>
+<td>uuid</td>
+<td>RFC 4122 UUID 对象</td>
+</tr>
+<tr>
+<td>socketserver</td>
+<td>网络服务器架构</td>
+</tr>
+<tr>
+<td>http.server</td>
+<td>HTTP 服务</td>
+</tr>
+<tr>
+<td>http.cookies</td>
+<td>HTTP 状态管理</td>
+</tr>
+<tr>
+<td>http.cookiejar</td>
+<td>HTTP 客户端的 Cookie 处理</td>
+</tr>
+<tr>
+<td>xmlrpc</td>
+<td>XMLRPC 服务器和客户端模块</td>
+</tr>
+<tr>
+<td>xmlrpc.client</td>
+<td>XML- RPC客户端访问</td>
+</tr>
+<tr>
+<td>xmlrpc.server</td>
+<td>基本 XML- RPC 服务器</td>
+</tr>
+<tr>
+<td>ipaddress</td>
+<td>IPv4/IPv6 操作库</td>
+</tr>
+</tbody>
+</table>
+<h2 id="19">19 多媒体服务<a class="headerlink" href="#19" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>audioop</td>
+<td>操纵原始音频数据</td>
+</tr>
+<tr>
+<td>aifc</td>
+<td>读写 AIFF 和 AIFC 文件</td>
+</tr>
+<tr>
+<td>sunau</td>
+<td>读写 Sun AU 文件</td>
+</tr>
+<tr>
+<td>wave</td>
+<td>读写 WAV 文件</td>
+</tr>
+<tr>
+<td>chunk</td>
+<td>读取 IFF 块数据</td>
+</tr>
+<tr>
+<td>colorsys</td>
+<td>颜色系统之间的转换</td>
+</tr>
+<tr>
+<td>imghdr</td>
+<td>确定图像的类型</td>
+</tr>
+<tr>
+<td>sndhdr</td>
+<td>确定声音文件的类型</td>
+</tr>
+<tr>
+<td>ossaudiodev</td>
+<td>访问 OSS 兼容音频设备</td>
+</tr>
+</tbody>
+</table>
+<h2 id="20">20 国际化<a class="headerlink" href="#20" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>gettext</td>
+<td>多语种国际化服务</td>
+</tr>
+<tr>
+<td>locale</td>
+<td>国际化服务</td>
+</tr>
+</tbody>
+</table>
+<h2 id="21">21 程序框架<a class="headerlink" href="#21" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>turtle</td>
+<td>龟标制图</td>
+</tr>
+<tr>
+<td>cmd</td>
+<td>支持命令行解释器</td>
+</tr>
+<tr>
+<td>shlex</td>
+<td>简单词法分析</td>
+</tr>
+</tbody>
+</table>
+<h2 id="22-tk">22 带有TK的图形用户界面<a class="headerlink" href="#22-tk" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>tkinter</td>
+<td>Tcl/Tk 的 Python 接口</td>
+</tr>
+<tr>
+<td>tkinter.ttk</td>
+<td>Tk主题控件</td>
+</tr>
+<tr>
+<td>tkinter.tix</td>
+<td>TK 的扩展小部件</td>
+</tr>
+<tr>
+<td>tkinter.scrolledtext</td>
+<td>滚动文本控件</td>
+</tr>
+<tr>
+<td>IDLE</td>
+<td>Python 的集成开发和学习环境</td>
+</tr>
+<tr>
+<td>Other Graphical User Interface Packages</td>
+<td>其他图形用户界面包</td>
+</tr>
+</tbody>
+</table>
+<h2 id="23">23 开发工具<a class="headerlink" href="#23" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>typing</td>
+<td>支持类型提示</td>
+</tr>
+<tr>
+<td>pydoc</td>
+<td>文档生成器和在线帮助系统</td>
+</tr>
+<tr>
+<td>doctest</td>
+<td>测试交互 Python 示例</td>
+</tr>
+<tr>
+<td>unittest</td>
+<td>单元测试框架</td>
+</tr>
+<tr>
+<td>unittest.mock</td>
+<td>模拟对象库</td>
+</tr>
+<tr>
+<td>unittest.mock</td>
+<td>开始使用模拟对象库</td>
+</tr>
+<tr>
+<td>2to3</td>
+<td>自动 Python 2 到 3 代码翻译</td>
+</tr>
+<tr>
+<td>test</td>
+<td>Python 回归测试包</td>
+</tr>
+<tr>
+<td>test.support</td>
+<td>Python 测试套件的实用工具</td>
+</tr>
+</tbody>
+</table>
+<h2 id="24">24 调试与分析<a class="headerlink" href="#24" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>bdb</td>
+<td>调试器框架</td>
+</tr>
+<tr>
+<td>faulthandler</td>
+<td>转储 Python 回溯</td>
+</tr>
+<tr>
+<td>pdb</td>
+<td>Python 调试器</td>
+</tr>
+<tr>
+<td>The Python Profilers</td>
+<td>Python 分析器</td>
+</tr>
+<tr>
+<td>timeit</td>
+<td>测量小代码段的执行时间</td>
+</tr>
+<tr>
+<td>trace</td>
+<td>跟踪 Python 语句执行</td>
+</tr>
+<tr>
+<td>tracemalloc</td>
+<td>跟踪内存分配</td>
+</tr>
+</tbody>
+</table>
+<h2 id="25">25 软件包装与分发<a class="headerlink" href="#25" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>distutils</td>
+<td>构建和安装 Python 模块</td>
+</tr>
+<tr>
+<td>ensurepip</td>
+<td>引导 pip 安装程序</td>
+</tr>
+<tr>
+<td>venv</td>
+<td>虚拟环境的创建</td>
+</tr>
+<tr>
+<td>zipapp</td>
+<td>管理可执行的 Python 压缩文件</td>
+</tr>
+</tbody>
+</table>
+<h2 id="26-python">26 Python 运行时服务<a class="headerlink" href="#26-python" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>sys</td>
+<td>系统特定参数和功能</td>
+</tr>
+<tr>
+<td>sysconfig</td>
+<td>提供对 Python 配置信息的访问</td>
+</tr>
+<tr>
+<td>builtins</td>
+<td>内置对象</td>
+</tr>
+<tr>
+<td><strong>main</strong></td>
+<td>顶级脚本环境</td>
+</tr>
+<tr>
+<td>warnings</td>
+<td>警告控制</td>
+</tr>
+<tr>
+<td>contextlib</td>
+<td>具有语句上下文的实用工具</td>
+</tr>
+<tr>
+<td>abc</td>
+<td>抽象基类</td>
+</tr>
+<tr>
+<td>atexit</td>
+<td>退出处理程序</td>
+</tr>
+<tr>
+<td>traceback</td>
+<td>打印或检索堆栈回溯</td>
+</tr>
+<tr>
+<td><strong>future</strong></td>
+<td>未来语句定义</td>
+</tr>
+<tr>
+<td>gc</td>
+<td>垃圾收集器接口</td>
+</tr>
+<tr>
+<td>inspect</td>
+<td>检查活体物体</td>
+</tr>
+<tr>
+<td>site</td>
+<td>站点特定配置钩子</td>
+</tr>
+<tr>
+<td>fpectl</td>
+<td>浮点异常控制</td>
+</tr>
+</tbody>
+</table>
+<h2 id="27-python">27 自定义 Python 解释器<a class="headerlink" href="#27-python" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>code</td>
+<td>解释器基类</td>
+</tr>
+<tr>
+<td>codeop</td>
+<td>编译 Python 代码</td>
+</tr>
+</tbody>
+</table>
+<h2 id="28">28 导入模块<a class="headerlink" href="#28" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>zipimport</td>
+<td>从 Zip 档案导入模块</td>
+</tr>
+<tr>
+<td>pkgutil</td>
+<td>软件包扩展实用程序</td>
+</tr>
+<tr>
+<td>modulefinder</td>
+<td>查找脚本使用的模块</td>
+</tr>
+<tr>
+<td>runpy</td>
+<td>定位和执行 Python 模块</td>
+</tr>
+<tr>
+<td>importlib</td>
+<td>实现导入</td>
+</tr>
+</tbody>
+</table>
+<h2 id="29-python">29 Python 语言服务<a class="headerlink" href="#29-python" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>parser</td>
+<td>访问 Python 解析树</td>
+</tr>
+<tr>
+<td>ast</td>
+<td>抽象语法树</td>
+</tr>
+<tr>
+<td>symtable</td>
+<td>访问编译器的符号表</td>
+</tr>
+<tr>
+<td>symbol</td>
+<td>与 Python 解析树一起使用的常数</td>
+</tr>
+<tr>
+<td>token</td>
+<td>与 Python 解析树一起使用的常数</td>
+</tr>
+<tr>
+<td>keyword</td>
+<td>Python 关键字的测试</td>
+</tr>
+<tr>
+<td>tokenize</td>
+<td>Python 信源记录器</td>
+</tr>
+<tr>
+<td>tabnanny</td>
+<td>模糊压痕检测</td>
+</tr>
+<tr>
+<td>pyclbr</td>
+<td>Python类浏览器支持</td>
+</tr>
+<tr>
+<td>py_compile</td>
+<td>编译 Python 源文件</td>
+</tr>
+<tr>
+<td>compileall</td>
+<td>字节编译 Python 库</td>
+</tr>
+<tr>
+<td>dis</td>
+<td>Python 字节码反汇编程序</td>
+</tr>
+<tr>
+<td>pickletools</td>
+<td>pickle 开发工具</td>
+</tr>
+</tbody>
+</table>
+<h2 id="30">30 杂项服务<a class="headerlink" href="#30" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>formatter</td>
+<td>通用输出格式</td>
+</tr>
+</tbody>
+</table>
+<h2 id="31-windows">31 微软 Windows 特定服务<a class="headerlink" href="#31-windows" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>msilib</td>
+<td>读写微软安装程序文件</td>
+</tr>
+<tr>
+<td>msvcrt</td>
+<td>MS VC++ 运行时的有用例程</td>
+</tr>
+<tr>
+<td>winreg</td>
+<td>Windows 注册表访问</td>
+</tr>
+<tr>
+<td>winsound</td>
+<td>Windows 的声音播放界面</td>
+</tr>
+</tbody>
+</table>
+<h2 id="32-unix">32 Unix 特定服务<a class="headerlink" href="#32-unix" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>posix</td>
+<td>最常见的 POSIX 系统调用</td>
+</tr>
+<tr>
+<td>pwd</td>
+<td>密码数据库</td>
+</tr>
+<tr>
+<td>spwd</td>
+<td>浅层密码数据库</td>
+</tr>
+<tr>
+<td>grp</td>
+<td>群数据库</td>
+</tr>
+<tr>
+<td>crypt</td>
+<td>检查 Unix 密码函数</td>
+</tr>
+<tr>
+<td>termios</td>
+<td>POTX 风格 tty 控件</td>
+</tr>
+<tr>
+<td>tty</td>
+<td>终端控制函数</td>
+</tr>
+<tr>
+<td>pty</td>
+<td>伪终端实用程序</td>
+</tr>
+<tr>
+<td>fcntl</td>
+<td>fcntl 和 ioctl 系统调用</td>
+</tr>
+<tr>
+<td>pipes</td>
+<td>管道接口</td>
+</tr>
+<tr>
+<td>resource</td>
+<td>资源使用信息</td>
+</tr>
+<tr>
+<td>nis</td>
+<td>Sun NIS 接口（黄页）</td>
+</tr>
+<tr>
+<td>syslog</td>
+<td>Unix 系统日志库例程</td>
+</tr>
+</tbody>
+</table>
+<h2 id="33_1">33 取代模块<a class="headerlink" href="#33_1" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>optparse</td>
+<td>命令行选项解析器</td>
+</tr>
+<tr>
+<td>imp</td>
+<td>访问 import 内部</td>
+</tr>
+</tbody>
+</table>
+<h2 id="34">34 无证模块<a class="headerlink" href="#34" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Platform specific modules</td>
+<td>平台特定模块</td>
+</tr>
+</tbody>
+</table>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../python.09/" title="第9章 正则表达式" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  后退
+                </span>
+                第9章 正则表达式
+              </span>
+            </div>
+          </a>
+        
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+        
+  <div class="md-footer-social">
+    <link rel="stylesheet" href="../assets/fonts/font-awesome.css">
+    
+      <a href="https://github.com/WangRongsheng" class="md-footer-social__link fa fa-github"></a>
+    
+  </div>
+
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../assets/javascripts/application.5e60981f.js"></script>
+      
+        
+        
+          
+          <script src="../assets/javascripts/lunr/lunr.stemmer.support.js"></script>
+          
+            
+              
+              
+            
+          
+          
+        
+      
+      <script>app.initialize({version:"1.0.4",url:{base:".."}})</script>
+      
+    
+    
+      
+    
+  </body>
+</html>

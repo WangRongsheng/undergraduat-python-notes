@@ -1,0 +1,1212 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+        <meta name="description" content="越努力越幸运">
+      
+      
+        <link rel="canonical" href="https://github.com/WangRongsheng/python.02/">
+      
+      
+        <meta name="author" content="王荣胜">
+      
+      
+        <meta name="lang:clipboard.copy" content="复制">
+      
+        <meta name="lang:clipboard.copied" content="已复制">
+      
+        <meta name="lang:search.language" content="zh">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="没有找到符合条件的结果">
+      
+        <meta name="lang:search.result.one" content="找到 1 个符合条件的结果">
+      
+        <meta name="lang:search.result.other" content="# 个符合条件的结果">
+      
+        <meta name="lang:search.tokenizer" content="[\uff0c\u3002]+">
+      
+      <link rel="shortcut icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.0.6">
+    
+    
+      
+        <title>第2章 基本数据类型 - 教书的先生</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/application.451f80e5.css">
+      
+        <link rel="stylesheet" href="../assets/stylesheets/application-palette.22915126.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#3f51b5">
+      
+    
+    
+      <script src="../assets/javascripts/modernizr.1aa3b519.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../assets/fonts/material-icons.css">
+    
+    
+  </head>
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448"
+    viewBox="0 0 416 448" id="__github">
+  <path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19-18.125
+        8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19 18.125-8.5
+        18.125 8.5 10.75 19 3.125 20.5zM320 304q0 10-3.125 20.5t-10.75
+        19-18.125 8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19
+        18.125-8.5 18.125 8.5 10.75 19 3.125 20.5zM360
+        304q0-30-17.25-51t-46.75-21q-10.25 0-48.75 5.25-17.75 2.75-39.25
+        2.75t-39.25-2.75q-38-5.25-48.75-5.25-29.5 0-46.75 21t-17.25 51q0 22 8
+        38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0
+        37.25-1.75t35-7.375 30.5-15 20.25-25.75 8-38.375zM416 260q0 51.75-15.25
+        82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5-41.75
+        1.125q-19.5 0-35.5-0.75t-36.875-3.125-38.125-7.5-34.25-12.875-30.25-20.25-21.5-28.75q-15.5-30.75-15.5-82.75
+        0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25
+        30.875q36.75-8.75 77.25-8.75 37 0 70 8 26.25-20.5
+        46.75-30.25t47.25-9.75q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34
+        99.5z" />
+</svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#1" tabindex="1" class="md-skip">
+        跳转至
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="https://github.com/WangRongsheng" title="教书的先生" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon"></i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            
+              <span class="md-header-nav__topic">
+                教书的先生
+              </span>
+              <span class="md-header-nav__topic">
+                第2章 基本数据类型
+              </span>
+            
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          
+            <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+            
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            键入以开始搜索
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+          
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+
+  <a href="https://github.com/WangRongsheng/" title="前往 Github 仓库" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#__github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      GitHub
+    </div>
+  </a>
+
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+        
+
+  
+
+<nav class="md-tabs md-tabs--active" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href=".." title="介绍" class="md-tabs__link">
+          介绍
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../python.01/" title="Python基础" class="md-tabs__link md-tabs__link--active">
+          Python基础
+        </a>
+      
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="https://github.com/WangRongsheng" title="教书的先生" class="md-nav__button md-logo">
+      
+        <i class="md-icon"></i>
+      
+    </a>
+    教书的先生
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+
+  <a href="https://github.com/WangRongsheng/" title="前往 Github 仓库" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#__github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      GitHub
+    </div>
+  </a>
+
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-1" type="checkbox" id="nav-1">
+    
+    <label class="md-nav__link" for="nav-1">
+      介绍
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-1">
+        介绍
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href=".." title="介绍" class="md-nav__link">
+      介绍
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../about/" title="关于" class="md-nav__link">
+      关于
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
+    
+    <label class="md-nav__link" for="nav-2">
+      Python基础
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        Python基础
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../python.01/" title="第1章 基本语法" class="md-nav__link">
+      第1章 基本语法
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        第2章 基本数据类型
+      </label>
+    
+    <a href="./" title="第2章 基本数据类型" class="md-nav__link md-nav__link--active">
+      第2章 基本数据类型
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">目录</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1" title="1 数字类型" class="md-nav__link">
+    1 数字类型
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11" title="1.1 整数类型" class="md-nav__link">
+    1.1 整数类型
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12" title="1.2 浮点数类型" class="md-nav__link">
+    1.2 浮点数类型
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13" title="1.3 复数类型" class="md-nav__link">
+    1.3 复数类型
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#14" title="1.4 数字类型的操作" class="md-nav__link">
+    1.4 数字类型的操作
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-str" title="2 字符串类型（str）" class="md-nav__link">
+    2 字符串类型（str）
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21" title="2.1 字符串类型的表示" class="md-nav__link">
+    2.1 字符串类型的表示
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22" title="2.2 转义字符" class="md-nav__link">
+    2.2 转义字符
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23" title="2.3 内置的字符串操作符" class="md-nav__link">
+    2.3 内置的字符串操作符
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#24" title="2.4 内置的字符串处理函数" class="md-nav__link">
+    2.4 内置的字符串处理函数
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#25" title="2.5 内置字符串处理方法" class="md-nav__link">
+    2.5 内置字符串处理方法
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#26" title="2.6 字符串类型的格式化" class="md-nav__link">
+    2.6 字符串类型的格式化
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../python.03/" title="第3章 组合数据类型" class="md-nav__link">
+      第3章 组合数据类型
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../python.04/" title="第4章 程序的控制流程" class="md-nav__link">
+      第4章 程序的控制流程
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../python.05/" title="第5章 函数" class="md-nav__link">
+      第5章 函数
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../python.06/" title="第6章 文件操作" class="md-nav__link">
+      第6章 文件操作
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../python.07/" title="第7章 异常处理" class="md-nav__link">
+      第7章 异常处理
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../python.08/" title="第8章 面向对象" class="md-nav__link">
+      第8章 面向对象
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../python.09/" title="第9章 正则表达式" class="md-nav__link">
+      第9章 正则表达式
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../python.10/" title="第10章 Python 标准库" class="md-nav__link">
+      第10章 Python 标准库
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">目录</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1" title="1 数字类型" class="md-nav__link">
+    1 数字类型
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11" title="1.1 整数类型" class="md-nav__link">
+    1.1 整数类型
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12" title="1.2 浮点数类型" class="md-nav__link">
+    1.2 浮点数类型
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13" title="1.3 复数类型" class="md-nav__link">
+    1.3 复数类型
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#14" title="1.4 数字类型的操作" class="md-nav__link">
+    1.4 数字类型的操作
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-str" title="2 字符串类型（str）" class="md-nav__link">
+    2 字符串类型（str）
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21" title="2.1 字符串类型的表示" class="md-nav__link">
+    2.1 字符串类型的表示
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22" title="2.2 转义字符" class="md-nav__link">
+    2.2 转义字符
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23" title="2.3 内置的字符串操作符" class="md-nav__link">
+    2.3 内置的字符串操作符
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#24" title="2.4 内置的字符串处理函数" class="md-nav__link">
+    2.4 内置的字符串处理函数
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#25" title="2.5 内置字符串处理方法" class="md-nav__link">
+    2.5 内置字符串处理方法
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#26" title="2.6 字符串类型的格式化" class="md-nav__link">
+    2.6 字符串类型的格式化
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/WangRongsheng/edit/master/docs/python.02.md" title="编辑此页" class="md-icon md-content__icon">&#xE3C9;</a>
+                
+                
+                  <h1>第2章 基本数据类型</h1>
+                
+                <h2 id="1">1 数字类型<a class="headerlink" href="#1" title="Permanent link">&para;</a></h2>
+<h3 id="11">1.1 整数类型<a class="headerlink" href="#11" title="Permanent link">&para;</a></h3>
+<p>整数类型有4种进制表示：十进制、二进制、八进制和十六进制。默认情况下，整数使用十进制，其他进制需要增加引导符号。</p>
+<table>
+<thead>
+<tr>
+<th align="center">进制种类</th>
+<th align="center">引导符号</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">十进制</td>
+<td align="center">无</td>
+</tr>
+<tr>
+<td align="center">二进制</td>
+<td align="center">0b 或 0B</td>
+</tr>
+<tr>
+<td align="center">八进制</td>
+<td align="center">0o 或 0O</td>
+</tr>
+<tr>
+<td align="center">十六进制</td>
+<td align="center">0x 或 0X</td>
+</tr>
+</tbody>
+</table>
+<p>pow(x, y) 函数是 Python 语言的内置函数，用来计算x的y次方。</p>
+<h3 id="12">1.2 浮点数类型<a class="headerlink" href="#12" title="Permanent link">&para;</a></h3>
+<p>Python 语言要求所有浮点数必须带有小数，小数部分可以是0。
+浮点数的表示方法有两种：十进制表示和科学计数法表示。
+科学计数法使用字母e或E作为幂符号，以10为基数：a乘10的b次方
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>    <span class="n">a</span> <span class="o">*</span> <span class="n">e</span> <span class="n">b</span>
+</pre></div>
+</td></tr></table></p>
+<h3 id="13">1.3 复数类型<a class="headerlink" href="#13" title="Permanent link">&para;</a></h3>
+<p>Python 语言中，复数的虚部通过后缀“J”或“j”来表示，例如：
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>    <span class="mf">12.3</span> <span class="o">+</span> <span class="mi">4j</span>
+</pre></div>
+</td></tr></table>
+复数类型中实数部分和叙述部分的数值都是浮点数类型。对于复数z，可以用 z.real 和 z.imag 分别获得它的实数部分和虚数部分。</p>
+<h3 id="14">1.4 数字类型的操作<a class="headerlink" href="#14" title="Permanent link">&para;</a></h3>
+<ol>
+<li>内置的数值运算操作符：</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th align="center">操作符</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">x + y</td>
+<td>x 与 y 之和</td>
+</tr>
+<tr>
+<td align="center">x - y</td>
+<td>x 与 y 之差</td>
+</tr>
+<tr>
+<td align="center">x * y</td>
+<td>x 与 y 之积</td>
+</tr>
+<tr>
+<td align="center">x / y</td>
+<td>x 与 y 之商</td>
+</tr>
+<tr>
+<td align="center">x // y</td>
+<td>x 与 y 之整数商，向下取整（去尾）</td>
+</tr>
+<tr>
+<td align="center">x % y</td>
+<td>x 与 y 之商的余数</td>
+</tr>
+<tr>
+<td align="center">-x</td>
+<td>x 的负数</td>
+</tr>
+<tr>
+<td align="center">+x</td>
+<td>x 本身</td>
+</tr>
+<tr>
+<td align="center">x ** y</td>
+<td>x 的 y 次方</td>
+</tr>
+</tbody>
+</table>
+<ol>
+<li>内置的数值运算函数：</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>函数</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>abs(x)</td>
+<td>x 的绝对值</td>
+</tr>
+<tr>
+<td>divmod(x, y)</td>
+<td>(x//y, x%y)，输出为二元组形式</td>
+</tr>
+<tr>
+<td>pow(x, y[, z])</td>
+<td>(x**y)%z</td>
+</tr>
+<tr>
+<td>round(x[, ndigits])</td>
+<td>对 x 四舍五入，保留 ndigits 小数。round(x) 返回四舍五入整数值</td>
+</tr>
+<tr>
+<td>max(x1, x2, ..., xn)</td>
+<td>返回最大值</td>
+</tr>
+<tr>
+<td>min(x1, x2, ..., xn)</td>
+<td>返回最小值</td>
+</tr>
+</tbody>
+</table>
+<ol>
+<li>内置的数字类型转换函数</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>函数</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>int(x)</td>
+<td>将 x 转换为整数，x 可以是浮点数或字符串</td>
+</tr>
+<tr>
+<td>float(x)</td>
+<td>将 x 转换成浮点数，x 可以是整数或字符串</td>
+</tr>
+<tr>
+<td>complex(re[, im])</td>
+<td>生成一个复数，实部为 re，虚部为 im，re 可以是整数、浮点数或字符串，im 可以是整数和浮点数</td>
+</tr>
+</tbody>
+</table>
+<h2 id="2-str">2 字符串类型（str）<a class="headerlink" href="#2-str" title="Permanent link">&para;</a></h2>
+<h3 id="21">2.1 字符串类型的表示<a class="headerlink" href="#21" title="Permanent link">&para;</a></h3>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>单引号 `字符串1`
+双引号 &quot;字符串2&quot;
+三单引号 ```字符串3```
+三双引号 &quot;&quot;&quot;字符串4&quot;&quot;&quot;
+</pre></div>
+</td></tr></table>
+
+<h3 id="22">2.2 转义字符<a class="headerlink" href="#22" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th align="center">转义字符</th>
+<th align="center">含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">\n</td>
+<td align="center">换行符</td>
+</tr>
+<tr>
+<td align="center">\t</td>
+<td align="center">制表符</td>
+</tr>
+<tr>
+<td align="center">\r</td>
+<td align="center">回车</td>
+</tr>
+</tbody>
+</table>
+<h3 id="23">2.3 内置的字符串操作符<a class="headerlink" href="#23" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>操作符</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>x + y</td>
+<td>连接两个字符串 x 与 y</td>
+</tr>
+<tr>
+<td>x * n 或 n * x</td>
+<td>复制 n 次字符串 x</td>
+</tr>
+<tr>
+<td>x in s</td>
+<td>如果 x 是 s 的子串，返回 True，否则返回 False</td>
+</tr>
+<tr>
+<td>x not in s</td>
+<td>如果 x 不是 s 的子串，返回 True，否则返回 False</td>
+</tr>
+<tr>
+<td>str[i]</td>
+<td>索引，返回第 i 个字符</td>
+</tr>
+<tr>
+<td>str[M: N]</td>
+<td>切片，返回索引从 M 到 N-1 的子串</td>
+</tr>
+<tr>
+<td>str[M: N: K]</td>
+<td>步骤切片，返回从 M 到 N-1 以 K 为步长的子串</td>
+</tr>
+</tbody>
+</table>
+<h3 id="24">2.4 内置的字符串处理函数<a class="headerlink" href="#24" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>函数</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>len(x)</td>
+<td>返回字符串 x 的长度，也可返回其他组合数据类型元素个数</td>
+</tr>
+<tr>
+<td>str(x)</td>
+<td>返回任意 x 所对应的字符串</td>
+</tr>
+<tr>
+<td>chr(x)</td>
+<td>返回 Unicode 编码 x 对应的单字符</td>
+</tr>
+<tr>
+<td>ord(x)</td>
+<td>但会单字符表示的 Unicode 编码</td>
+</tr>
+<tr>
+<td>hex(x)</td>
+<td>返回整数 x 对应十六进制数的小写形式字符串</td>
+</tr>
+<tr>
+<td>oct(x)</td>
+<td>返回整数 x 对应八进制数的小写形式字符串</td>
+</tr>
+</tbody>
+</table>
+<h3 id="25">2.5 内置字符串处理方法<a class="headerlink" href="#25" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>str.lower()</td>
+<td>全部字符小写</td>
+</tr>
+<tr>
+<td>str.upper()</td>
+<td>全部字符大写</td>
+</tr>
+<tr>
+<td>str.islower()</td>
+<td>当 str 所有字符都是小写时，返回 True，否则返回 False</td>
+</tr>
+<tr>
+<td>str.isprintable()</td>
+<td>当 str 所有字符都是可打印的，返回 True，否则返回 False</td>
+</tr>
+<tr>
+<td>str.isnumeric()</td>
+<td>当 str 所有字符都是数字时，返回 True，否则返回 False</td>
+</tr>
+<tr>
+<td>str.isspace()</td>
+<td>当 str 所有字符都是空格时，返回 True，否则返回 False</td>
+</tr>
+<tr>
+<td>str.endswith(suffix[, start[, end]])</td>
+<td>str[start: end] 以 suffix 结尾返回 True，否则返回 False</td>
+</tr>
+<tr>
+<td>str.startswith(prefix[, start[, end]])</td>
+<td>str[start: end] 以 prefix 开头返回 True，否则返回 False</td>
+</tr>
+<tr>
+<td>str.split(sep=None, maxsplit=1)</td>
+<td>返回一个列表，由 str 根据 sep 被分隔的部分构成</td>
+</tr>
+<tr>
+<td>str.index(x[, i[, j]])</td>
+<td>返回字符串 str 从 i 开始到 j 第一次出现字符 x 的位置</td>
+</tr>
+<tr>
+<td>str.count(sub[, start[, end]])</td>
+<td>返回 str[start: end] 中 sub 子串出现的次数</td>
+</tr>
+<tr>
+<td>str.replace(old, new[, count])</td>
+<td>所有 old 字符被替换为 new，如果 count 给出，则前 count 次 old 被 new 替换</td>
+</tr>
+<tr>
+<td>str.center(width[, fillchar])</td>
+<td>字符串居中，width 表示字符宽度，fillchar 表示填充字符</td>
+</tr>
+<tr>
+<td>str.strip([chars])</td>
+<td>返回字符 str 的副本，在其左侧和右侧去掉 chars 中的字符</td>
+</tr>
+<tr>
+<td>str.zfill(width)</td>
+<td>返回字符串 str 的副本，长度为 width，不足部分在左侧添0</td>
+</tr>
+<tr>
+<td>str.format()</td>
+<td>返回 字符串 str 的一种排版格式</td>
+</tr>
+<tr>
+<td>str.join()</td>
+<td>返回一个新字符串，由组合数据类型 iterable 变量的每个元素组成，元素间用 str 分割</td>
+</tr>
+</tbody>
+</table>
+<h3 id="26">2.6 字符串类型的格式化<a class="headerlink" href="#26" title="Permanent link">&para;</a></h3>
+<p>字符串格式化函数 format()方法的基本使用格式如下：
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>    <span class="o">&lt;</span><span class="err">模版字符串</span><span class="o">&gt;.</span><span class="n">format</span><span class="p">(</span><span class="o">&lt;</span><span class="err">逗号分割的参数</span><span class="o">&gt;</span><span class="p">)</span>
+</pre></div>
+</td></tr></table>
+format()方法中模版字符串的占位符{ }除了包括参数序号，还可以包括格式控制信息。
+占位符内部样式如下：
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>    <span class="p">{</span><span class="o">&lt;</span><span class="err">参数序号</span><span class="o">&gt;</span><span class="p">[:</span> <span class="o">&lt;</span><span class="err">格式控制标记</span><span class="o">&gt;</span><span class="p">]}</span>
+</pre></div>
+</td></tr></table>
+其中，格式控制标记用来控制参数显示时的格式，格式内容如下：</p>
+<table>
+<thead>
+<tr>
+<th align="center">:</th>
+<th align="center">&lt;填充&gt;</th>
+<th align="center">&lt;对齐&gt;</th>
+<th align="center">&lt;宽度&gt;</th>
+<th align="center">&lt;,&gt;</th>
+<th align="center">&lt;.精度&gt;</th>
+<th align="center">&lt;类型&gt;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">引导符号</td>
+<td align="center">用于填充的单个字符</td>
+<td align="center">&lt;左对齐，&gt;右对齐，^居中</td>
+<td align="center">占位符宽度</td>
+<td align="center">数字类型的千位分隔符</td>
+<td align="center">浮点数小数部分的精度或字符串的最大长度</td>
+<td align="center">整数类型b,c,d,o,x,X，浮点数类型e,E,f,%</td>
+</tr>
+</tbody>
+</table>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../python.01/" title="第1章 基本语法" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  后退
+                </span>
+                第1章 基本语法
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../python.03/" title="第3章 组合数据类型" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  前进
+                </span>
+                第3章 组合数据类型
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+        
+  <div class="md-footer-social">
+    <link rel="stylesheet" href="../assets/fonts/font-awesome.css">
+    
+      <a href="https://github.com/WangRongsheng" class="md-footer-social__link fa fa-github"></a>
+    
+  </div>
+
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../assets/javascripts/application.5e60981f.js"></script>
+      
+        
+        
+          
+          <script src="../assets/javascripts/lunr/lunr.stemmer.support.js"></script>
+          
+            
+              
+              
+            
+          
+          
+        
+      
+      <script>app.initialize({version:"1.0.4",url:{base:".."}})</script>
+      
+    
+    
+      
+    
+  </body>
+</html>
